@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit task</title>
+</head>
+<body>
+
+<h2>Edit task status</h2>
+
+<form  method="post" action="/api/updateTaskStatus">
+    <p>Choose task:  <select name="taskId2" id="taskId2"></select> </p>
+    <div> Choose status:
+        <select name="statusCode2" id="statusCode2">
+        <option value="Red">Red</option>
+        <option value="Yellow">Yellow</option>
+        <option value="Green">Green</option>
+    </select>
+    </div>
+    <button>Submit</button>
+</form>
+
+</body>
+<script>
+
+    fetch("/api/taskOptions").then(response => response.text()).then(html => {
+        document.getElementById("taskId2").innerHTML = html;
+    });
+
+</script>
+</html>

@@ -1,0 +1,28 @@
+@startuml
+
+entity Employees {
+    employee id
+    --
+    first_name
+    last_name
+    email
+}
+
+entity Employees_task {
+    task id
+    employee id
+
+}
+
+entity Task {
+    Task ID
+    --
+    Name
+    Status
+ }
+
+Employees ||--o{ Employees_task
+Task ||--|{ Employees_task
+
+
+@enduml

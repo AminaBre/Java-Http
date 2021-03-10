@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit task</title>
+</head>
+<body>
+
+<h2>Give the employee a task</h2>
+
+<form  method="post" action="/api/updateTask">
+    <p>Choose employee: <select name="employeeId" id="employeeId"></select></p>
+    <p>Choose task:  <select name="taskId" id="taskId"></select> </p>
+    <button>Submit</button>
+</form>
+
+</body>
+<script>
+
+    fetch("/api/employeeOptions").then(response => response.text()).then(html => {
+        document.getElementById("employeeId").innerHTML = html;
+    });
+
+    fetch("/api/taskOptions").then(response => response.text()).then(html => {
+        document.getElementById("taskId").innerHTML = html;
+    });
+
+</script>
+</html>

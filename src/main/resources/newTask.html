@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Add project task</h2>
+
+<form method="POST" action="/api/newTask">
+    <div><label>Task: <input type="text" name="taskName" /></label></div>
+    <div> Status color code: <select name="statusCode">
+        <option value="Red">Red</option>
+        <option value="Yellow">Yellow</option>
+        <option value="Green">Green</option>
+    </select>
+    </div>
+    <button>Add</button>
+</form>
+
+</body>
+</html>

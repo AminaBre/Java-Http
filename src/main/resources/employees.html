@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+</head>
+<body>
+
+<h2>Current employees</h2>
+<div id="workers"></div>
+
+
+<script>
+    fetch("/api/workers" + location.search).then(response => response.text()).then(html => {
+        document.getElementById("workers").innerHTML = html;
+    });
+</script>
+</body>
+</html>
